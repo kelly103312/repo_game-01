@@ -10,7 +10,7 @@ root.render(
   <Canvas
     camera={
       { 
-        position: [2,0,6]
+        position: [1,1,5]
       }
     }
     
