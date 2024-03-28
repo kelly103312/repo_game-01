@@ -8,8 +8,8 @@ export const Experience = () => {
 
   useFrame(({clock}, delta)=>{
     //boxRef.current.rotation.x += 1 * delta;
-    //boxRef.current.rotation.x += (Math.PI/2) * delta;
-    //boxRef.current.rotation.y += Math.PI * delta;
+    boxRef.current.rotation.x += (Math.PI/2) * delta;
+    boxRef.current.rotation.y += Math.PI * delta;
     boxRef.current.position.y = Math.cos(clock.getElapsedTime());
     boxRef.current.position.x += 0.5 * delta;
   })
