@@ -13,8 +13,8 @@ root.render(
         position: [2,0,6]
       }
     }
+    
   >
-
       <Experience/>
 
   </Canvas>

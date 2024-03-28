@@ -5,9 +5,13 @@ import { useRef } from "react";
 
 export const Experience = () => {
   const boxRef = useRef(null);
-  
-  useFrame((state, delta)=>{
-    boxRef.current.rotation.x += 1 * delta;
+
+  useFrame(({clock}, delta)=>{
+    //boxRef.current.rotation.x += 1 * delta;
+    //boxRef.current.rotation.x += (Math.PI/2) * delta;
+    //boxRef.current.rotation.y += Math.PI * delta;
+    boxRef.current.position.y = Math.cos(clock.getElapsedTime());
+    boxRef.current.position.x += 0.5 * delta;
   })
 
   return (
@@ -15,7 +19,7 @@ export const Experience = () => {
         <ambientLight intensity={2} />
         <directionalLight position={[10,10,5]} intensity={2}/>
         <mesh ref={boxRef}>
-            <boxGeometry args={[2,2,2]}/> 
+            <boxGeometry args={[1,1,1]}/> 
             <meshStandardMaterial color={"purple"}/>
         </mesh>
         <OrbitControls />
