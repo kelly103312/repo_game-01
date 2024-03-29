@@ -8,6 +8,7 @@ import { Canvas } from '@react-three/fiber';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Canvas
+    shadows={true}
     camera={
       { 
         position: [1,1,5]

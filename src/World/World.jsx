@@ -1,6 +1,8 @@
 import { useGLTF, useTexture } from '@react-three/drei'
 import React from 'react'
 import { RepeatWrapping } from 'three';
+import { Box } from '../figures/Box';
+import { Sphere } from '../figures/Sphere';
 
 export const World = (props) => {
     const { nodes, materials } = useGLTF('/assets/models/world/worldSquidGames1.glb')
@@ -29,6 +31,17 @@ export const World = (props) => {
     return (
       <group {...props} dispose={null}>
         <group>
+          <Box position ={[-4,-0.5,0]} />
+          <Box position ={[-4,-0.5,2]} />
+          <Box position ={[-4,-0.5,4]} />
+          <Box position ={[-4,-0.5,-2]} />
+          <Box position ={[-4,-0.5,-4]} />
+          <Box position ={[4,-0.5,2]} />
+          <Box position ={[4,-0.5,4]} />
+          <Box position ={[4,-0.5,0]} />
+          <Box position ={[4,-0.5,-2]} />
+          <Box position ={[4,-0.5,-4]} />
+          <Sphere />
           <mesh geometry={nodes.Walls.geometry} material={materials.Material} />
           <mesh geometry={nodes.Floor.geometry}>
             <meshStandardMaterial  
