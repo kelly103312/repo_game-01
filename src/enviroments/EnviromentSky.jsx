@@ -23,7 +23,7 @@ export const EnviromentSky = () => {
             size={5}
             fade={false}
             speed={0.5}
-            scale={6}
+            scale={10}
         />
     </>
   )
