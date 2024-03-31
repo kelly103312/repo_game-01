@@ -2,20 +2,20 @@ import { OrbitControls } from '@react-three/drei'
 import React from 'react'
 import { useRef } from "react";
 import { World } from './World/World';
-import { Color } from 'three';
+
+import { Ligths } from './lights/Ligths';
+import { EnviromentMap } from './enviroments/EnviromentMap';
+import { EnviromentHdrs } from './enviroments/EnviromentHdrs';
+import { EnviromentSky } from './enviroments/EnviromentSky';
 
 export const Experience = () => {
   const boxRef = useRef(null);
 
   return (
     <>
-        <ambientLight intensity={2} />
-        <directionalLight 
-            castShadow={true}
-            color={new Color("#8F00FF")}
-            position={[10,10,5]} 
-            intensity={2}/>
+        <Ligths />
         <OrbitControls />
+        <EnviromentSky />
         <World />
     </>
   )

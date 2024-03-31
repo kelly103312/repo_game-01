@@ -1,12 +1,9 @@
 import { useGLTF, useTexture } from '@react-three/drei'
 import React from 'react'
 import { RepeatWrapping } from 'three';
-import { Box } from '../figures/Box';
-import { Sphere } from '../figures/Sphere';
-import { BoxofRanges } from '../figures/BoxofRanges';
 
 export const World = (props) => {
-    const { nodes, materials } = useGLTF('/assets/models/world/worldSquidGames1.glb')
+    const { nodes, materials } = useGLTF('/assets/models/world/wordSquidGameswithfences.glb')
 
     const PATH = '/assets/textures/floor/';
     const PATHWALLS = '/assets/textures/walls/';
@@ -54,31 +51,36 @@ export const World = (props) => {
     return (
       <group {...props} dispose={null}>
         <group>
-          <Box position ={[-4,-0.5,0]} />
-          <Box position ={[-4,-0.5,2]} />
-          <Box position ={[-4,-0.5,4]} />
-          <Box position ={[-4,-0.5,-2]} />
-          <Box position ={[-4,-0.5,-4]} />
-          <Box position ={[4,-0.5,2]} />
-          <Box position ={[4,-0.5,4]} />
-          <Box position ={[4,-0.5,0]} />
-          <Box position ={[4,-0.5,-2]} />
-          <Box position ={[4,-0.5,-4]} />
-          <Sphere />
-
-          <BoxofRanges />
-          <mesh geometry={nodes.Walls.geometry} >
+          {/* <mesh geometry={nodes.Walls.geometry} >
             <meshStandardMaterial  
                   {...propsTextureWalls}
               />
-          </mesh>
-          <mesh geometry={nodes.Floor.geometry}>
+          </mesh> */}
+          <mesh receiveShadow={true} geometry={nodes.Floor.geometry}>
             <meshStandardMaterial  
                 {...propsTexture}
             />
           </mesh>
+          <mesh
+            castShadow={true}
+            geometry={nodes.WoodenFence.geometry}
+          >
+            <meshStandardMaterial 
+              color={"#6F473A"}
+              metalness={0}
+              roughness={0.5}
+            />
+          </mesh>
+          <group>
+            <mesh
+              castShadow={true}
+              geometry={nodes.tree_1.geometry}
+              material={materials['Tree.Birch.Leaf.Summer.Mat']}
+            />
+            <mesh castShadow={true} geometry={nodes.tree_2.geometry} material={materials['Tree.Birch.Bark.Mat']} />
+          </group>
         </group>
       </group>
     )
 }
-useGLTF.preload('/assets/models/world/worldSquidGames1.glb')
+useGLTF.preload('/assets/models/world/wordSquidGameswithfences.glb')
