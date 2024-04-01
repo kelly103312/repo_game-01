@@ -6,16 +6,16 @@ import { useHelper } from '@react-three/drei';
 export const Ligths = () => {
   const spotLightRef = useRef(null);
 
-  const optionsSpotLight = useMemo(()=>{
+  /*const optionsSpotLight = useMemo(()=>{
     return {
       intensitySL : {value: 1, min: 0, max: 1000, step:1},
       colorSL: { value:"white"}
     }
-  }, []);
+  }, []);*/
 
-  const spotLightControl = useControls('SpotLight', optionsSpotLight);
+  //const spotLightControl = useControls('SpotLight', optionsSpotLight);
 
-  useHelper(spotLightRef, SpotLightHelper);
+  //useHelper(spotLightRef, SpotLightHelper);
 
   return (
     <>
@@ -40,14 +40,16 @@ export const Ligths = () => {
             intensity={10}
          /> */}
 
-         <spotLight 
+         {/* <spotLight 
             ref={spotLightRef}
             position={[0,2,0]}
-            intensity={spotLightControl.intensitySL}
-            color={spotLightControl.colorSL}
+            //intensity={spotLightControl.intensitySL}
+            //color={spotLightControl.colorSL}
+            color="orange"
+            intensity={2}
             angle={Math.PI / 3}
             distance={10}
-         />
+         /> */}
          <hemisphereLight 
             position={[2,8,-2]}
             intensity={0.8}
