@@ -11,3 +11,22 @@ body,
 canvas{
     touch-action: none;
 }
+
+.welcome-text{
+    color: white;
+    padding: 1rem;
+    user-select: none;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+
+}
+
