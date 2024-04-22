@@ -11,8 +11,10 @@ import { Perf } from 'r3f-perf';
 import { Box } from './figures/Box';
 import {useKeyboard} from './Controls/useKeyboard'
 import { Sphere } from './figures/Sphere';
-import { Girl } from './Avatars/Girl';
+import { Girl } from './Charaters/Avatars/Girl';
 import { WelcomeText } from './World/WelcomeText';
+import { EvilBoyCircle } from './Charaters/EvilsBoys/EvilBoyCircle';
+import { EvilBoyDiagonal } from './Charaters/EvilsBoys/EvilBoyDiagonal';
 
 export const Experience = () => {
   const boxRef = useRef(null);
@@ -30,6 +32,9 @@ export const Experience = () => {
           <BakeShadows />
           <EnviromentSky />
           <World />
+          <EvilBoyCircle position={[0, 0.5, -6]} ></EvilBoyCircle>
+          <EvilBoyDiagonal position={[0, 0.5, -15]} ></EvilBoyDiagonal>
+
           {/* 
           <Box position={[0, 0.5, 0]} keyMap={keyMap}/>
           <Box position={[1, 1, 1]} keyMap={keyMap}/>
