@@ -27,7 +27,7 @@ export const Experience = () => {
           <World />
           <Box position={[0, 0.5, 0]} keyMap={keyMap}/>
           <Box position={[1, 1, 1]} keyMap={keyMap}/>
-          
+          <Sphere />
 
         </Suspense>
     </>
