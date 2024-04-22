@@ -18,6 +18,7 @@ export const EnviromentSky = () => {
             saturation={0} 
             fade speed={0.5}/>
         <Sparkles 
+            position={[0,0,0]}
             color= "yellow"
             count={100}
             size={5}

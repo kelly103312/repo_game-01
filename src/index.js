@@ -5,6 +5,7 @@ import './Experience'
 import { Experience } from './Experience';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardControls, Loader } from '@react-three/drei';
+import { Pane } from './layout/Pane';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,13 +18,15 @@ root.render(
                 { name: "right", keys: ["ArrowRight", "d", "D"] },
                 { name: "jump", keys: ["Space"] },
               ]}>
+      {/* <Pane/> */}
       <Canvas
         shadows={true}
-        // camera={
-        //   { 
-        //     position: [1,1,5]
-        //   }
-        //}
+        camera={
+           { 
+             position: [0,1.5,0],
+             rotation: [0,0,0]
+           }
+        }
         
       >
           <Experience/>
