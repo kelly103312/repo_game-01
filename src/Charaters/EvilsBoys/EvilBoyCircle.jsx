@@ -9,7 +9,6 @@ export const EvilBoyCircle = (props) => {
     const speed = 1.5
 
     useFrame((state,delta)=>{
-        console.log("circleman")
         const elapsedTime = state.clock.getElapsedTime()
         const angle = elapsedTime * speed 
         const x = Math.cos(angle) * radius 
@@ -20,7 +19,7 @@ export const EvilBoyCircle = (props) => {
     })
 
   return (
-    <group ref={groupBoy} {...props} dispose={null}>
+    <group name="EvilBoy" ref={groupBoy} {...props} dispose={null}>
         <group name="EvilBoyCircle">
             <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
                 <group name="root">

@@ -23,7 +23,7 @@ root.render(
         shadows={true}
         camera={
            { 
-             position: [0,1.5,0],
+             position: [0,1.5,-95],
              rotation: [0,0,0]
            }
         }

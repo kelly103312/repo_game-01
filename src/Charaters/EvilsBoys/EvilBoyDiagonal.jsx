@@ -8,7 +8,6 @@ export const EvilBoyDiagonal = (props) => {
     const radius = 2
 
     useFrame((state,delta)=>{
-        console.log("diagonalman")
         const elapsedTime = state.clock.getElapsedTime()
         //groupBoy.current.position.set(props.position[0] + x, props.position[1] , props.position[2] + z)
         groupBoy.current.position.x = props.position[0] + Math.cos(elapsedTime) * radius;

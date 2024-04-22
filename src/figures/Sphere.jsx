@@ -1,42 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import { useKeyboardControls } from "@react-three/drei"
-import * as THREE from "three"
-import { useRapier } from "@react-three/rapier"
-import * as RAPIER from "@dimforge/rapier3d-compat"
+import { CapsuleCollider, RigidBody} from "@react-three/rapier"
 
-export const Sphere = () => {
-    const ref = useRef()
-    const [, get] = useKeyboardControls()
-    // const SPEED = 5
-    // const direction = new THREE.Vector3()
-    // const frontVector = new THREE.Vector3()
-    // const sideVector = new THREE.Vector3()
-    // const rotation = new THREE.Vector3()
-    // const rapier = useRapier()
+export const Sphere = (props) => {
+    const sphereBodyRef = useRef()
 
-    useFrame((state) => {
-        const { forward, backward, left, right, jump } = get()
+    const onHandleSphere = ()=>{
+       sphereBodyRef.current.applyImpulse({x:0, y:2, z:-10},true);
+    }
 
-        // const velocity = ref.current.linvel()
-        // // movement
-        // frontVector.set(0, 0, backward - forward)
-        // sideVector.set(left - right, 0, 0)
-        // direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(state.camera.rotation)
-        // ref.current.setLinvel({ x: direction.x, y: velocity.y, z: direction.z })
-        // // jumping
-        // const world = rapier.world.raw()
-        // const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -1, z: 0 }))
-        // const grounded = ray && ray.collider && Math.abs(ray.toi) <= 1.75
-        // if (jump && grounded) ref.current.setLinvel({ x: 0, y: 7.5, z: 0 })
-    })
+    useEffect(()=>{
+
+    }, [sphereBodyRef.current])
+
+    const onCollisionerEnter = ({manifold,target,other}) =>{
+      if(other.rigidBodyObject.name==="girldBody"){ 
+            console.log("ENDD ENTER")
+      }    
+    }
+
+    const onCollisionerExit = ({manifold,target,other}) =>{
+      if(other.rigidBodyObject.name==="girldBody"){ 
+        console.log("ENDD")
+      }  
+    }
+
   return (
-    <>
-        <mesh ref={ref}>
-            <sphereGeometry  args={[1, 1, 3]} />
+    <RigidBody 
+      name="sphereBody"
+      onCollisionEnter={(e)=>{onCollisionerEnter(e)}}
+      onCollisionExit={(e)=>onCollisionerExit(e)}
+      ref={sphereBodyRef} 
+      position={props.position} 
+      colliders="hull">
+        <mesh onClick={onHandleSphere}>
+            <sphereGeometry  args={[1, 3, 3]} />
             <meshStandardMaterial color={"blue"} />
         </mesh>
-    </>
+    </RigidBody>
   )
 }
