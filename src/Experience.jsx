@@ -35,8 +35,8 @@ export const Experience = () => {
 
           </Girl>
           {/* <Box position={[0, 0.5, 0]} keyMap={keyMap}/>
-          <Box position={[1, 1, 1]} keyMap={keyMap}/> */}
-          
+          <Box position={[0,1.6,-2]} keyMap={keyMap}/>
+           */}
 
         </Suspense>
     </>
