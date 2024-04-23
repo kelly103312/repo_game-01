@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef,useState  } from 'react'
 import { useFrame } from '@react-three/fiber'
+import { RigidBody } from '@react-three/rapier'
 
 export const Box = (props) => {
   const boxRef = useRef()
@@ -14,7 +15,7 @@ export const Box = (props) => {
     keyMap['KeyS'] && selected && (boxRef.current.position.z += 1 * delta)
   })
   return (
-   <>
+   < >
     <mesh ref={boxRef} {...props} onPointerDown={() => setSelected(!selected)}>
         <boxGeometry />
         <meshBasicMaterial color={0x00ff00} wireframe={!selected} />
