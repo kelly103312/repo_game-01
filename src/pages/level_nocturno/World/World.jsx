@@ -4,7 +4,7 @@ import React from 'react'
 
 export const World = (props) => {
     const { nodes, materials } = useGLTF('/assets/models/world/wordSquidGameswithfences.glb')
-  console.log('mundo')
+
     return (
         <group {...props} dispose={null}>
           <group>
