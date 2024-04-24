@@ -26,7 +26,7 @@ export const Castillo = () => {
             <World />
 
           </Physics>
-          <WelcomeText position={[0, 1.6, -5]} />
+          <WelcomeText position={[0, 4, -96]} />
         </Suspense>
       </Canvas>
     </>

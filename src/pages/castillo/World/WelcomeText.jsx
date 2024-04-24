@@ -2,7 +2,7 @@ import { Center, Float, Html, Text, Text3D } from '@react-three/drei'
 import React from 'react'
 
 export const WelcomeText = (props) => {
-  const text = "Hola";
+  const text = "META";
   return (
     <Float
         rotationIntensity={0.01}
