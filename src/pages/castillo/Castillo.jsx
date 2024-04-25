@@ -1,4 +1,4 @@
-import { BakeShadows, Loader, OrbitControls } from '@react-three/drei'
+import { BakeShadows, KeyboardControls, Loader } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from 'react'
 import { World } from './World/World'
@@ -8,32 +8,35 @@ import { EnviromentSky } from './Enviroment/EnviromentSky'
 import { WelcomeText } from './World/WelcomeText'
 import { Sphere } from './Figures/Sphere'
 import { AvatarPrincipal } from './Charaters/AvatarPrincipal'
+import { Controls } from './Controls/Controls'
+import useMovements from '../../Utils/key-movements'
 
 export const Castillo = () => {
+  const map = useMovements();
+
   return (
-    <>
+    <KeyboardControls map={map}>
       <Canvas
         shadows={true}
         camera={{
-          position: [0, 1.5, -80],
+          position: [0, 1.5, -0.5],
           rotation: [0, 0, 0],
         }}
       >
-        <OrbitControls target={[0, 1.5, -82]} />
+        
         <Suspense fallback={null}>
           <Ligths />
           <BakeShadows />
           <EnviromentSky />
           <Physics>
-            <World />
-            <Sphere position={[-2,2,-49]} /> 
-            
+            <World />            
             <AvatarPrincipal />
           </Physics>
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>
+        <Controls />
       </Canvas>
       <Loader />
-    </>
+    </KeyboardControls>
   )
 }
