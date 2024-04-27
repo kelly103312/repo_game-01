@@ -36,6 +36,7 @@ export const Controls = () => {
             runSound.currentTime = 0
             runSound.volume = Math.random()
             runSound.play()
+            console.log("sound");
         }else{
             
             runSound.pause()
