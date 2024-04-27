@@ -15,7 +15,8 @@ export const useAvatar = () => {
 export const AvatarProvider = ({children}) => {
      const [avatar, setAvatar] = useState({
         ref:null,
-        body:null
+        body:null,
+        animations: "idle"
      })
   return (
     <avatarContext.Provider value={({avatar, setAvatar})}>
