@@ -10,6 +10,9 @@ import { Sphere } from './Figures/Sphere'
 import { AvatarPrincipal } from './Charaters/AvatarPrincipal'
 import { Controls } from './Controls/Controls'
 import useMovements from '../../Utils/key-movements'
+import Ecctrl,{ EcctrlAnimation } from 'ecctrl'
+import { Box } from './Figures/Box'
+import { Bear } from './Charaters/Bear'
 
 export const Castillo = () => {
   const map = useMovements();
@@ -26,11 +29,21 @@ export const Castillo = () => {
         
         <Suspense fallback={null}>
           <Ligths />
-          <BakeShadows />
           <EnviromentSky />
-          <Physics>
+          <BakeShadows />
+          <Physics debug={true}>
             <World />            
-            <AvatarPrincipal />
+            <Ecctrl 
+              autoBalance = {true}
+              camInitDis = {-10}
+              camMaxDis = {-10}
+              position={[0,0.5,-3]}
+            >
+              <AvatarPrincipal />
+            </Ecctrl>
+            <Sphere position={[0,1,-15]} />
+            <Box position={[0,2,-5]} />
+            <Bear position={[-1, 0, -80]} />
           </Physics>
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>

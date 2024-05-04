@@ -7,16 +7,16 @@ export const Sphere = (props) => {
   useFrame((state,delta)=>{
     const elapsedTime = state.clock.getElapsedTime();
     console.log(sphereBody.current)
-    sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
-    sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
-},[sphereBody.current])
+    //sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
+    //sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
+  },[sphereBody.current])
   return (
-    <>  
+    <RigidBody position={props.position} colliders="ball">  
             <mesh  ref={sphereBody}
-            position={props.position}>
+              >
                 <sphereGeometry args={[0.4, 6, 6]} />
                 <meshStandardMaterial color={"grey"} />
             </mesh>
-    </>
+    </RigidBody>
   )
 }
