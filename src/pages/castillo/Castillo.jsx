@@ -13,6 +13,7 @@ import useMovements from '../../Utils/key-movements'
 import Ecctrl,{ EcctrlAnimation } from 'ecctrl'
 import { Box } from './Figures/Box'
 import { Bear } from './Charaters/Bear'
+import { Rampla } from './Figures/Rampla'
 
 export const Castillo = () => {
   const map = useMovements();
@@ -44,6 +45,7 @@ export const Castillo = () => {
             <Sphere position={[0,1,-15]} />
             <Box position={[0,2,-5]} />
             <Bear position={[-1, 0, -80]} />
+            <Rampla position={[-1, 0, -40]} />
           </Physics>
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>
