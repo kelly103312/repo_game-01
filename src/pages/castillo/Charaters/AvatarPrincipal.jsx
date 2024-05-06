@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { useAnimations, useGLTF } from '@react-three/drei'
-import { RigidBody } from '@react-three/rapier'
 import { useAvatar } from '../Context/AvatarContext'
 
 export const AvatarPrincipal = (props) => {
@@ -16,7 +15,6 @@ export const AvatarPrincipal = (props) => {
   },[])
 
   useEffect(()=>{
-    //console.log(avatar);
     if(avatar.animation !== ""){
       actions[avatar.animation]?.reset().fadeIn(0.5).play();
       return()=>{
@@ -29,7 +27,7 @@ export const AvatarPrincipal = (props) => {
 
   return (
     //<RigidBody  ref={avatarBodyRef} position={[0,1.5,-3]} colliders={"hull"}> 
-      <group ref={avatarRef}  rotation={[Math.PI / 2, 0, 0]} position-y={-0.6}>
+      <group ref={avatarRef}  rotation={[Math.PI / 2, 0, 0]} position-y={-0.8}>
        <group name="Armature" scale={0.336}>
           <skinnedMesh
             name="Body"
