@@ -6,7 +6,6 @@ export const Sphere = (props) => {
   const sphereBody = useRef()
   useFrame((state,delta)=>{
     const elapsedTime = state.clock.getElapsedTime();
-    console.log(sphereBody.current)
     //sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
     //sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
   },[sphereBody.current])

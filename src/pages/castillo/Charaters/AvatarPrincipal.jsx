@@ -10,26 +10,12 @@ export const AvatarPrincipal = (props) => {
   const { nodes, materials, animations } = useGLTF('/assets/castillo/avatars/ardilla.glb')
 
   const {actions} = useAnimations(animations,avatarRef)
-
-  // useEffect(()=>{
-  //   setAvatar({
-  //     ref: avatarRef.current,
-  //     body: avatarBodyRef.current
-  //   })
-  //   // const deltaAngle = Math.atan2(avatarRef.current.rotation.y, avatarRef.current.rotation.x)
-  //   // avatarRef.current.rotation.x=Math.PI / 2
-  //   // avatarRef.current.rotation.y= 0
-  //   // avatarRef.current.rotation.z= Math.PI / 1
-    
-  // },[avatarBodyRef.current, avatarRef.current])
   
   useEffect(()=>{
-    console.log(actions)
     actions["idle"].play();
   },[])
 
   useEffect(()=>{
-    console.log(avatarRef);
     //console.log(avatar);
     if(avatar.animation !== ""){
       actions[avatar.animation]?.reset().fadeIn(0.5).play();
@@ -43,7 +29,7 @@ export const AvatarPrincipal = (props) => {
 
   return (
     //<RigidBody  ref={avatarBodyRef} position={[0,1.5,-3]} colliders={"hull"}> 
-       <group  ref={avatarRef} name="Scene"  rotation={[Math.PI / 2, 0, 0]} position-y={-0.6}>
+      <group ref={avatarRef}  rotation={[Math.PI / 2, 0, 0]} position-y={-0.6}>
        <group name="Armature" scale={0.336}>
           <skinnedMesh
             name="Body"
@@ -88,7 +74,7 @@ export const AvatarPrincipal = (props) => {
             skeleton={nodes.upper_teeth.skeleton}
           />
           <primitive object={nodes.mixamorigHips} />
-      </group>
+        </group>
       </group>
     //</RigidBody>
   )

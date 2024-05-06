@@ -14,12 +14,14 @@ import Ecctrl,{ EcctrlAnimation } from 'ecctrl'
 import { Box } from './Figures/Box'
 import { Bear } from './Charaters/Bear'
 import { Rampla } from './Figures/Rampla'
+import { Pane } from '../castillo/layout/Pane'
 
 export const Castillo = () => {
   const map = useMovements();
 
   return (
     <KeyboardControls map={map}>
+      <Pane />
       <Canvas
         shadows={true}
         camera={{
@@ -35,10 +37,12 @@ export const Castillo = () => {
           <Physics debug={true}>
             <World />            
             <Ecctrl 
+              name="AVATAR" 
               autoBalance = {true}
               camInitDis = {-10}
               camMaxDis = {-10}
               position={[0,0.5,-3]}
+              maxVelLimit={5}
             >
               <AvatarPrincipal />
             </Ecctrl>
