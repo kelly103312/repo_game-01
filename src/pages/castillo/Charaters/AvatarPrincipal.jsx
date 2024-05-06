@@ -29,7 +29,7 @@ export const AvatarPrincipal = (props) => {
   },[])
 
   useEffect(()=>{
-    console.log(avatarRef);
+    console.log(avatarRef.current);
     //console.log(avatar);
     if(avatar.animation !== ""){
       actions[avatar.animation]?.reset().fadeIn(0.5).play();
