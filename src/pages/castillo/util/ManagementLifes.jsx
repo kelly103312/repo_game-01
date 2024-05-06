@@ -19,11 +19,8 @@ export const LifesProvider = ({ children }) => {
 
     const restarLifes = () => {
       setLifes(lifes - 1);
-      console.log(lifes);
       return lifes;
     };
-    console.log(lifes);
-
 
   return (
     <LifesContext.Provider value={({ lifes, restarLifes })}>

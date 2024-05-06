@@ -11,14 +11,16 @@ import { AvatarPrincipal } from './Charaters/AvatarPrincipal'
 import { Controls } from './Controls/Controls'
 import useMovements from '../../Utils/key-movements'
 import Ecctrl,{ EcctrlAnimation } from 'ecctrl'
-import { Box } from './Figures/Box'
 import { Bear } from './Charaters/Bear'
 import { Rampla } from './Figures/Rampla'
+import { Box } from './Figures/Box'
 import { Pane } from '../castillo/layout/Pane'
+import { Coins } from './Figures/Coins'
+
 
 export const Castillo = () => {
   const map = useMovements();
-
+  console.log(map);
   return (
     <KeyboardControls map={map}>
       <Pane />
@@ -37,6 +39,7 @@ export const Castillo = () => {
           <Physics debug={true}>
             <World />            
             <Ecctrl 
+              jumpVel={4}
               name="AVATAR" 
               autoBalance = {true}
               camInitDis = {-10}
@@ -51,6 +54,7 @@ export const Castillo = () => {
             <Bear position={[-1, 0, -80]} />
             <Rampla position={[-1, 0, -40]} />
           </Physics>
+          <Coins position={[-2, 2, -15]} />
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>
         <Controls />

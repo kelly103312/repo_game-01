@@ -6,7 +6,6 @@ export const Box = (props) => {
   const { lifes, restarLifes } = useLifes();
 
   const onCollisionExit = (e) =>{
-    console.log("collision")
     if(e.other.rigidBodyObject.name === "AVATAR"){
       restarLifes();
     }
