@@ -8,7 +8,7 @@ export const World = (props) => {
     return (
       <group {...props} dispose={null}>
         <group>
-          <RigidBody type='fixed' name="floor">
+          <RigidBody type='fixed' name="floor" colliders="trimesh">
               <mesh
                 castShadow
                 receiveShadow
