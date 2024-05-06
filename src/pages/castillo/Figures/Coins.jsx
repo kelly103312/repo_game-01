@@ -12,11 +12,11 @@ export const Coins = (props) => {
         <group name="Scene">
             <group name="coin" userData={{ name: 'coin' }}>
                 <mesh
-                name="CoinObj_Coin_0"
-                geometry={nodes.CoinObj_Coin_0.geometry}
-                material={materials.Coin}
-                userData={{ name: 'CoinObj_Coin_0' }}
-                />
+                  name="CoinObj_Coin_0"
+                  geometry={nodes.CoinObj_Coin_0.geometry}
+                  material={materials.Coin}
+                  userData={{ name: 'CoinObj_Coin_0' }}
+                  />
             </group>
         </group>
     </group>
