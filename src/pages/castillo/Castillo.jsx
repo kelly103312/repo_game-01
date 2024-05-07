@@ -64,6 +64,8 @@ export const Castillo = () => {
             <Coins position={[0, 2, -32]}/>
             <Coins position={[0, 2, -38]} />
             <Coins position={[0, 2, -42]}/>
+            <Coins position={[0, 2, -47]}/>
+            <Coins position={[0, 2, -55]}/>
           </Physics>
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>
