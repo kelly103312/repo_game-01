@@ -33,7 +33,7 @@ export const Controls = () => {
 
     useFrame((state,delta)=>{
         const {forward, backward, leftward, rightward,jump} = get()
-        console.log(jump)
+        
         if(forward||backward||leftward||rightward){
             setPlay(true)
         }else{

@@ -19,7 +19,7 @@ export const Coins = (props) => {
   return (
     <>
       {visible ? 
-          <RigidBody type="fixed" onCollisionExit={(e)=>{onCollisionExit(e)}}>
+          <RigidBody  type="fixed" onCollisionExit={(e)=>{onCollisionExit(e)}}>
             <group ref={group} {...props} dispose={null} >
                 <group name="Scene">
                     <group name="coin" userData={{ name: 'coin' }}>
