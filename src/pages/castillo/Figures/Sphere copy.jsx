@@ -7,7 +7,7 @@ export const Sphere = (props) => {
   const sphere = useRef()
 
   useFrame((state,delta)=>{
-    const elapsedTime = state.clock.getElapsedTime() * props.velocity;
+    const elapsedTime = state.clock.getElapsedTime();
 
     if(sphere.current){
       sphere.current.setTranslation({

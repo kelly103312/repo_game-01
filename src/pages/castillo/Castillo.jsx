@@ -50,8 +50,10 @@ export const Castillo = () => {
               <AvatarPrincipal />
             </Ecctrl>
             
-            <Sphere position={[0,1,-30]} />
-            <Sphere position={[0,1,-35]} />
+            <Sphere position={[0,1,-30]} velocity={3} />
+            <Sphere position={[0,1,-35]} velocity={4} />
+            <Sphere position={[0,1,-35]} velocity={5} />
+            <Sphere position={[0,1,-40]} velocity={6} />
             
             <Box position={[0,2,-5]} />
             
