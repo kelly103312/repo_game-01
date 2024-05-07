@@ -49,9 +49,14 @@ export const Castillo = () => {
             >
               <AvatarPrincipal />
             </Ecctrl>
+            
             <Sphere position={[0,1,-30]} />
+            <Sphere position={[0,1,-35]} />
+            
             <Box position={[0,2,-5]} />
+            
             <Bear position={[-1, 0, -80]} />
+            
             <Laberinto position={[-4.6, 2, -10]} />
           </Physics>
           <Coins position={[-2, 2, -15]} />

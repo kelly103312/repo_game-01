@@ -1,23 +1,34 @@
 import { RigidBody } from '@react-three/rapier'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useFrame } from "@react-three/fiber"
+import { Vector3 } from 'three'
 
 export const Sphere = (props) => {
   const sphereBody = useRef()
+  const sphere = useRef()
+
   useFrame((state,delta)=>{
     const elapsedTime = state.clock.getElapsedTime();
-    // sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
-    // sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
-    sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime) * 4;
 
-  },[sphereBody.current])
+    if(sphere.current){
+      sphere.current.setTranslation({
+          x: props.position[0] + Math.cos(elapsedTime) * 4,
+          y: props.position[1],
+          z: props.position[2],
+        },true);
+    }
+  },)
+  
+  useEffect(()=>{
+    console.log(sphere)
+  },[])
+
   return (
-    <RigidBody position={props.position} colliders="ball">  
-            <mesh  ref={sphereBody}
-              >
-                <sphereGeometry args={[0.4, 6, 6]} />
-                <meshStandardMaterial color={"grey"} />
-            </mesh>
+    <RigidBody ref={sphere} position={props.position} type="fixed" colliders="ball">  
+      <mesh  ref={sphereBody}>
+          <sphereGeometry args={[0.4, 6, 6]} />
+          <meshStandardMaterial color={"grey"} />
+      </mesh>
     </RigidBody>
   )
 }
