@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLifes } from '../util/ManagementLifes';
+import { useLifes } from '../Context/ManagementLifes';
 
 export const Pane = () => {
   const { lifes, restarLifes } = useLifes();

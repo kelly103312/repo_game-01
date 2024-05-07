@@ -1,7 +1,7 @@
 import React from 'react'
 import {RoutesGame}  from './routes/RoutesGame'
 import { AvatarProvider } from './pages/castillo/Context/AvatarContext'
-import { LifesProvider } from './pages/castillo/util/ManagementLifes'
+import { LifesProvider } from './pages/castillo/Context/ManagementLifes'
 
 
 export const Experience = () => {

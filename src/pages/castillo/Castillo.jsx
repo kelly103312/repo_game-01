@@ -50,18 +50,19 @@ export const Castillo = () => {
               <AvatarPrincipal />
             </Ecctrl>
             
-            <Sphere position={[0,1,-30]} velocity={3} />
-            <Sphere position={[0,1,-35]} velocity={4} />
-            <Sphere position={[0,1,-35]} velocity={5} />
-            <Sphere position={[0,1,-40]} velocity={6} />
+            <Sphere position={[0,1,-35]} velocity={3} />
+            <Sphere position={[0,1,-40]} velocity={4} />
+            <Sphere position={[0,1,-40]} velocity={5} />
+            <Sphere position={[0,1,-45]} velocity={6} />
+            <Sphere position={[0,1,-50]} velocity={7} />
             
             <Box position={[0,2,-5]} />
             
             <Bear position={[-1, 0, -80]} />
             
-            <Laberinto position={[-4.6, 2, -10]} />
+            <Laberinto position={[-4.6, 2, -15]} />
+            <Coins position={[0, 2, -32]} />
           </Physics>
-          <Coins position={[-2, 2, -15]} />
           <WelcomeText position={[0, 4, -96]} />
         </Suspense>
         <Controls />

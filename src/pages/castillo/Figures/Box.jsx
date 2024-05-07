@@ -1,6 +1,6 @@
 import { RigidBody } from '@react-three/rapier'
 import React from 'react'
-import { useLifes } from '../util/ManagementLifes';
+import { useLifes } from '../Context/ManagementLifes';
 
 export const Box = (props) => {
   const { lifes, restarLifes } = useLifes();
