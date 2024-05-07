@@ -8,7 +8,7 @@ export const Coins = (props) => {
 
 
   return (
-    <group ref={group} {...props} dispose={null} visible={true}>
+    <group ref={group} {...props} dispose={null} visible={false}>
         <group name="Scene">
             <group name="coin" userData={{ name: 'coin' }}>
                 <mesh

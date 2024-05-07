@@ -6,8 +6,10 @@ export const Sphere = (props) => {
   const sphereBody = useRef()
   useFrame((state,delta)=>{
     const elapsedTime = state.clock.getElapsedTime();
-    //sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
-    //sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
+    // sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime);
+    // sphereBody.current.position.z = props.position[2] + Math.cos(elapsedTime);
+    sphereBody.current.position.x = props.position[0] + Math.cos(elapsedTime) * 4;
+
   },[sphereBody.current])
   return (
     <RigidBody position={props.position} colliders="ball">  

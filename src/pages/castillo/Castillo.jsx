@@ -10,12 +10,12 @@ import { Sphere } from './Figures/Sphere'
 import { AvatarPrincipal } from './Charaters/AvatarPrincipal'
 import { Controls } from './Controls/Controls'
 import useMovements from '../../Utils/key-movements'
-import Ecctrl,{ EcctrlAnimation } from 'ecctrl'
+import Ecctrl from 'ecctrl'
 import { Bear } from './Charaters/Bear'
-import { Rampla } from './Figures/Rampla'
 import { Box } from './Figures/Box'
 import { Pane } from '../castillo/layout/Pane'
 import { Coins } from './Figures/Coins'
+import { Laberinto } from './Figures/Laberinto'
 
 
 export const Castillo = () => {
@@ -49,10 +49,10 @@ export const Castillo = () => {
             >
               <AvatarPrincipal />
             </Ecctrl>
-            <Sphere position={[0,1,-15]} />
+            <Sphere position={[0,1,-30]} />
             <Box position={[0,2,-5]} />
             <Bear position={[-1, 0, -80]} />
-            <Rampla position={[-1, 0, -40]} />
+            <Laberinto position={[-4.6, 2, -10]} />
           </Physics>
           <Coins position={[-2, 2, -15]} />
           <WelcomeText position={[0, 4, -96]} />
